@@ -1,0 +1,12 @@
+{
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "123zyxel!",
+    "database": "marketdb",
+    "entities": [
+        "src/**/**.entity{.ts,.js}"
+    ],
+    "autoSchemaSync": true
+}
