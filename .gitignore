@@ -1,2 +1,4 @@
 server/node_modules/**
 dist
+server/yarn-error.log
+server/yarn.lock
