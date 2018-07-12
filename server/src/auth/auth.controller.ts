@@ -1,11 +1,12 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Inject } from '@nestjs/common';
+import { AuthService } from './services/auth.service';
 
 @Controller('auth')
 export class AuthController {
-    constructor(){}
+  constructor(@Inject(AuthService) private authService: AuthService) {}
 
-    // @Get()
-    // getT{
-        
-    // }
+  @Get('token')
+  public async getTocken() {
+    return await this.authService.createToken();
+  }
 }
