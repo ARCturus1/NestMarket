@@ -7,7 +7,6 @@ import { databaseProviders } from "database/database.providers";
 
 @Module({
     controllers: [UserController],
-    // exports: [UserController],
     providers: [
         ...databaseProviders,
         ...userProviders, 
