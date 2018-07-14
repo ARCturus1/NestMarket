@@ -1,5 +1,15 @@
+import { ApiModelProperty } from "@nestjs/swagger";
+
 export class SignUpRequest {
-    constructor(public email: string,
-        public password: string,
-        public confirmationPassword: string) { }
+    @ApiModelProperty()
+    public email: string;
+
+    @ApiModelProperty()
+    public username: string;
+
+    @ApiModelProperty()
+    public password: string;
+    
+    @ApiModelProperty()
+    public confirmationPassword: string;
 }

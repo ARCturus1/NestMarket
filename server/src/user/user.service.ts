@@ -19,7 +19,8 @@ export class UserService {
         return await this.userRepository.findOne({ accesstoken: token });
     }
 
-    public async add(user: UserEntity): Promise<UserEntity> {
-        return await this.userRepository.create(user);
+    public async save(user: UserEntity): Promise<UserEntity> {
+        const existUser = await this.findOneByEmail(user.email)
+        return !existUser ? await this.userRepository.save(user) : Promise.resolve(existUser);
     }
 }

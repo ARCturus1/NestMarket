@@ -17,12 +17,12 @@ export class UserEntity implements IUser {
     @Column()
     password: string;
 
-    @Column()
-    accesstoken: string;
+    @Column({nullable: true})
+    accesstoken?: string;
 
-    @Column()
-    refreshtoken: string;
+    @Column({nullable: true})
+    refreshtoken?: string;
 
-    @Column()
-    role: number;
+    @Column({nullable: true})
+    role?: number;
 }

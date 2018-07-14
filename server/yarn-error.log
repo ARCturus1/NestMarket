@@ -2,13 +2,13 @@ Arguments:
   C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js start:dev
 
 PATH: 
-  C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Utils\Archives\;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\DTS\Binn\;C:\Program Files\TortoiseHg\;C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\130\DTS\Binn\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files\Microsoft Network Monitor 3\;C:\Users\r.savchenko\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files (x86)\Microsoft Emulator Manager\1.0\;C:\Program Files (x86)\Skype\Phone\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\Git\cmd;C:\Program Files (x86)\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\140\Tools\Binn\ManagementStudio\;D:\PostgreSQL\pg10\bin;C:\Program Files\nodejs\;C:\Users\r.savchenko\AppData\Local\atom\bin;C:\Program Files (x86)\Nmap;C:\Users\r.savchenko\AppData\Local\Yarn\bin;C:\Users\r.savchenko\.dotnet\tools;C:\Users\r.savchenko\AppData\Roaming\npm
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files (x86)\NoteBook FanControl\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\120\DTS\Binn\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\dotnet\;C:\Program Files (x86)\Yarn\bin\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Microsoft VS Code\bin;C:\PostgreSQL\pg10\bin;C:\Users\Xiaomi\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Users\Xiaomi\AppData\Local\atom\bin;C:\Users\Xiaomi\AppData\Local\Yarn\bin;C:\Users\Xiaomi\AppData\Local\Microsoft\WindowsApps;C:\Users\Xiaomi\AppData\Roaming\npm
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  9.11.2
+  10.4.0
 
 Platform: 
   win32 x64
@@ -24,7 +24,7 @@ npm manifest:
       "format": "prettier --write \"**/*.ts\"",
       "start": "ts-node -r tsconfig-paths/register src/main.ts",
       "start:dev": "nodemon",
-      "start:debug": "nodemon-debug",
+      "start:debug": "nodemon --debug dist PORT=5000",
       "prestart:prod": "rm -rf dist && tsc",
       "start:prod": "node dist/main.js",
       "start:hmr": "node dist/server",
@@ -7403,14 +7403,14 @@ Lockfile:
 Trace: 
   Error: Command failed.
   Exit code: 1
-  Command: C:\Windows\system32\cmd.exe
+  Command: C:\WINDOWS\system32\cmd.exe
   Arguments: /d /s /c nodemon
-  Directory: E:\work\2018\NestMarket\server
+  Directory: C:\work\2018\NestMarket\NestMarket\server
   Output:
   
       at ProcessTermError.MessageError (C:\Program Files (x86)\Yarn\lib\cli.js:186:110)
       at new ProcessTermError (C:\Program Files (x86)\Yarn\lib\cli.js:226:113)
       at ChildProcess.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+      at ChildProcess.emit (events.js:182:13)
+      at maybeClose (internal/child_process.js:961:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:248:5)

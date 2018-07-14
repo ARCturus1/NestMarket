@@ -16,11 +16,11 @@ export class UserDto implements IUser {
     password: string;
 
     @ApiModelProperty()
-    accesstoken: string;
+    accesstoken?: string;
 
     @ApiModelProperty()
-    refreshtoken: string;
+    refreshtoken?: string;
 
     @ApiModelProperty({enum: UserRole})
-    role: number;
+    role?: number;
 }
