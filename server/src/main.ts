@@ -9,6 +9,7 @@ async function bootstrap() {
             .setDescription('The market API description')
             .setVersion('1.0')
             .addTag('market')
+            .addBearerAuth()
             .build(),
         document = SwaggerModule.createDocument(app, options);
 

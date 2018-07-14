@@ -1,5 +1,6 @@
 import { IUser } from "./user.interface";
 import { ApiModelProperty } from "@nestjs/swagger";
+import { UserRole } from "./user.roles";
 
 export class UserDto implements IUser {
     @ApiModelProperty()
@@ -7,6 +8,9 @@ export class UserDto implements IUser {
 
     @ApiModelProperty()
     username: string;
+
+    @ApiModelProperty()
+    email: string;
 
     @ApiModelProperty()
     password: string;
@@ -17,6 +21,6 @@ export class UserDto implements IUser {
     @ApiModelProperty()
     refreshtoken: string;
 
-    @ApiModelProperty()
+    @ApiModelProperty({enum: UserRole})
     role: number;
 }

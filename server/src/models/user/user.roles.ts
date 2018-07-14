@@ -1,7 +1,7 @@
-enum UserRoles {
-  Admin,
-  Manager,
-  Customer
+enum UserRole {
+  Admin = 'Admin',
+  Manager = 'Manager',
+  Customer = 'Customer'
 }
 
-export { UserRoles };
+export { UserRole };

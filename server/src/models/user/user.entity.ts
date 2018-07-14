@@ -1,25 +1,28 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
-import { UserRoles } from './user.roles';
+import { UserRole } from './user.roles';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IUser } from './user.interface';
 
 @Entity()
 export class UserEntity implements IUser {
-  @PrimaryGeneratedColumn()
-  id: number;
+    @PrimaryGeneratedColumn()
+    id: number;
 
-  @Column({ length: 500 })
-  username: string;
+    @Column({ length: 500 })
+    username: string;
 
-  @Column()
-  password: string;
+    @Column({ length: 500 })
+    email: string;
 
-  @Column()
-  accesstoken: string;
+    @Column()
+    password: string;
 
-  @Column()
-  refreshtoken: string;
+    @Column()
+    accesstoken: string;
 
-  @Column()
-  role: number;
+    @Column()
+    refreshtoken: string;
+
+    @Column()
+    role: number;
 }
