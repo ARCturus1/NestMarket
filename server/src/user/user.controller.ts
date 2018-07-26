@@ -18,7 +18,7 @@ export class UserController {
     @Get()
     //@UseGuards(AuthGuard('jwt'))
     public async getAllUsers(): Promise<UserDto[]> {
-        return await this.userService.findAll();
+        return await this.userService.getAll();
     }
 
     @Post()
@@ -33,7 +33,7 @@ export class UserController {
     public async signIn(@Body() user: SignInRequest, @Res() response) {
         if (!user || !user.email) { response.status(HttpStatus.BAD_REQUEST).send(); }
 
-        const userEntity = await this.userService.findOneByEmail(user.email);
+        const userEntity = await this.userService.findOne({ email: user.email });
         if (!!userEntity) {
             const userJwt: JwtPayload = {
                 email: userEntity.email,
@@ -49,7 +49,9 @@ export class UserController {
     @Post('SignUp')
     @ApiResponse({ status: 201, description: 'The record has been successfully created.' })
     public async signUp(@Body() user: SignUpRequest, @Res() response) {
-        if (!user || !user.email || !user.password) { response.status(HttpStatus.BAD_REQUEST).send(); }
+        if (!user || !user.email || !user.password) {
+            response.status(HttpStatus.BAD_REQUEST).send();
+        }
 
         const userData: UserEntity = new UserEntity()
         userData.username = user.username;
@@ -68,7 +70,7 @@ export class UserController {
         try {
             const token = await this.authService.createToken(userJwt);
             response.status(HttpStatus.CREATED).send(token);
-        } catch (ex) { 
+        } catch (ex) {
             response.status(HttpStatus.BAD_GATEWAY).send(ex);
         }
     }

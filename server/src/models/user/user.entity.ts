@@ -2,11 +2,12 @@ import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 import { UserRole } from './user.roles';
 import { ApiModelProperty } from '@nestjs/swagger';
 import { IUser } from './user.interface';
+import { BaseEntity } from 'shared/models/base.entity';
 
 @Entity()
-export class UserEntity implements IUser {
-    @PrimaryGeneratedColumn()
-    id: number;
+export class UserEntity extends BaseEntity implements IUser {
+    // @PrimaryGeneratedColumn()
+    // id: number;
 
     @Column({ length: 500 })
     username: string;

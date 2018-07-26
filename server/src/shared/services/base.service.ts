@@ -1,8 +1,9 @@
 import { Injectable, Inject, Body } from '@nestjs/common';
-import { Repository, DeepPartial, BaseEntity, DeleteResult, UpdateResult } from 'typeorm';
+import { Repository, DeepPartial, DeleteResult, UpdateResult } from 'typeorm';
+import { BaseEntity } from '../models/base.entity';
 
 @Injectable()
-export class BaseService<T extends BaseEntity> {
+export abstract class BaseService<T extends BaseEntity> {
     constructor(private readonly repository: Repository<T>) { }
 
     public async getAll(): Promise<T[]> {
