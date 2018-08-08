@@ -10,7 +10,18 @@ export function reducer(state = initialState, action: ProductActions.ProductActi
             return {
                 ...state,
                 isLoading: true,
+                success: false,
                 error: null
+            };
+        }
+
+        case ProductActions.ProductActionTypes.AddSuccess: {
+            return {
+                ...state,
+                isLoading: false,
+                success: true,
+                error: null,
+                data: [...state.data, action.payload.item]
             };
         }
 

@@ -8,6 +8,7 @@ import { environment } from '../environments/environment';
 import { AppMaterialModule } from './material/material.module';
 import { RootMenuComponent } from './views/root-menu/root-menu.component';
 import { HelloMessageComponent } from './views/hello-message/hello-message.component';
+import { RoutingModule } from './routing/routing.module';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { HelloMessageComponent } from './views/hello-message/hello-message.compo
         BrowserModule,
         BrowserAnimationsModule,
         AppMaterialModule,
+        RoutingModule,
         ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
     ],
     providers: [],

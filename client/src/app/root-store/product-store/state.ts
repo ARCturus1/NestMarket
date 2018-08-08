@@ -1,17 +1,20 @@
 import { EntityAdapter, createEntityAdapter, EntityState } from '@ngrx/entity';
 import { Product } from '../../models/product.model';
 
-export const featureAdapter: EntityAdapter<Product> = createEntityAdapter<Product>({
+export const productAdapter: EntityAdapter<Product> = createEntityAdapter<Product>({
         selectId: model => model.id,
         sortComparer: (a: Product, b: Product): number => b.id - a.id
     });
 
 export interface State extends EntityState<Product> {
     isLoading: boolean;
+    success: boolean;
+    data?: Product[];
     error?: any;
 }
 
-export const initialState: State = featureAdapter.getInitialState({
+export const initialState: State = productAdapter.getInitialState({
     isLoading: false,
-    error: null
+    error: null,
+    success: false
 });
